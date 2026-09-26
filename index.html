@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ALUMICO — Алюминиевые архитектурные системы из Греции</title>
+<meta name="description" content="Европейские алюминиевые системы для фасадов, ограждений, ветрозащиты и парапетов. Производство в Греции. Техническая поддержка, подбор систем и расчет для девелоперов, архитекторов и фасадных подрядчиков в России и СНГ.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FBFBF9;
+  --bg-soft:#F2F1ED;
+  --bg-card:#FFFFFF;
+  --ink:#0E1216;
+  --ink-2:#5C656E;
+  --ink-3:#8A949E;
+  --line:#E9E5DD;
+  --line-2:#EDE9E2;
+  --accent:#0E1216;
+  --accent-hover:#1C252D;
+  --accent-soft:#E8ECF0;
+  --beige:#F6F3EE;
+  --radius-xl:28px;
+  --radius-l:20px;
+  --radius-m:14px;
+  --shadow-soft:0 20px 60px rgba(14,18,22,0.06);
+  --shadow-card:0 8px 30px rgba(14,18,22,0.06);
+  --max:1320px;
+  --pad:32px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"Geist", "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+img{display:block; max-width:100%}
+a{color:inherit; text-decoration:none}
+button{font:inherit}
+p{margin:0}
+h1,h2,h3{margin:0; line-height:1.05; letter-spacing:-0.03em}
+.eyebrow{
+  display:inline-flex; align-items:center; gap:8px;
+  font-size:11px; letter-spacing:0.14em; text-transform:uppercase; font-weight:600;
+  color:var(--ink-2); border:1px solid var(--line); background:#fff;
+  padding:8px 12px; border-radius:999px;
+}
+.eyebrow i{width:6px; height:6px; border-radius:50%; background:#0E1216; display:inline-block}
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:10px;
+  height:52px; padding:0 24px; border-radius:999px; border:1px solid transparent;
+  font-weight:600; font-size:15px; letter-spacing:-0.01em;
+  transition:all .25s cubic-bezier(.16,1,.3,1); cursor:pointer; white-space:nowrap;
+}
+.btn-primary{background:var(--accent); color:#fff; box-shadow:0 8px 20px rgba(14,18,22,0.12)}
+.btn-primary:hover{background:var(--accent-hover); transform:translateY(-1px)}
+.btn-secondary{background:#fff; border-color:var(--line); color:var(--ink)}
+.btn-secondary:hover{border-color:var(--ink); transform:translateY(-1px)}
+.btn-ghost{height:40px; padding:0 16px; font-size:14px; background:transparent; border-color:var(--line)}
+.container{max-width:var(--max); margin:0 auto; padding:0 var(--pad)}
+@media(max-width:768px){ .container{padding:0 20px} :root{--pad:20px} }
+
+/* NAV */
+.nav-wrap{
+  position:sticky; top:0; z-index:50;
+  backdrop-filter:saturate(180%) blur(16px);
+  background:rgba(251,251,249,0.82);
+  border-bottom:1px solid rgba(233,229,221,0.8);
+}
+.nav{
+  display:flex; align-items:center; justify-content:space-between;
+  height:72px; gap:24px;
+}
+.nav-logo{
+  display:flex; align-items:center; gap:12px; font-weight:700; letter-spacing:-0.04em;
+}
+.nav-logo-mark{
+  width:36px; height:36px; border-radius:10px; background:var(--ink); color:#fff;
+  display:grid; place-items:center; font-size:14px; font-weight:700;
+}
+.nav-links{display:flex; gap:28px; align-items:center}
+.nav-links a{font-size:14px; font-weight:500; color:var(--ink-2); transition:color .2s}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{display:flex; align-items:center; gap:12px}
+.hamburger{display:none; width:44px; height:44px; border-radius:999px; border:1px solid var(--line); background:#fff; place-items:center; cursor:pointer}
+.hamburger span{display:block; width:18px; height:1.5px; background:var(--ink); margin:3px 0; transition:.3s}
+@media(max-width:1024px){
+  .nav-links{display:none}
+  .hamburger{display:grid}
+}
+.mobile-menu{
+  position:fixed; inset:72px 0 0 0; background:var(--bg); z-index:49;
+  padding:24px var(--pad) 40px; transform:translateY(-110%); opacity:0; pointer-events:none;
+  transition:all .4s cubic-bezier(.16,1,.3,1);
+  display:flex; flex-direction:column; gap:8px;
+}
+.mobile-menu.open{transform:translateY(0); opacity:1; pointer-events:auto}
+.mobile-menu a{font-size:22px; font-weight:600; letter-spacing:-0.02em; padding:16px 0; border-bottom:1px solid var(--line-2)}
+.mobile-menu .btn{margin-top:20px; width:100%}
+
+/* HERO */
+.hero{
+  padding:32px 0 0;
+  position:relative;
+}
+.hero-grid{
+  display:grid; grid-template-columns:1.05fr 0.95fr; gap:40px; align-items:start;
+}
+.hero-left{padding:48px 0 56px}
+.hero h1{
+  font-family:"Manrope", sans-serif;
+  font-size:clamp(36px, 5.2vw, 64px); font-weight:700;
+  line-height:0.95; letter-spacing:-0.05em; margin:20px 0 20px;
+}
+.hero-desc{
+  font-size:18px; line-height:1.5; color:var(--ink-2); max-width:560px; margin-bottom:32px;
+}
+.hero-ctas{display:flex; gap:12px; flex-wrap:wrap; margin-bottom:28px}
+.hero-trust{
+  display:flex; gap:24px; flex-wrap:wrap; border-top:1px solid var(--line-2); padding-top:20px; margin-top:8px;
+}
+.hero-trust-item{display:flex; gap:10px; align-items:center; font-size:13px; color:var(--ink-2); font-weight:500}
+.hero-trust-item b{color:var(--ink); font-weight:600}
+.hero-visual{
+  position:relative; border-radius:var(--radius-xl); overflow:hidden;
+  background:var(--bg-soft); aspect-ratio:4/3.2; box-shadow:var(--shadow-soft);
+}
+.hero-visual img{width:100%; height:100%; object-fit:cover}
+.hero-visual-overlay{
+  position:absolute; left:16px; right:16px; bottom:16px;
+  display:grid; grid-template-columns:1fr 1fr; gap:12px;
+}
+.glass-card{
+  background:rgba(255,255,255,0.86); backdrop-filter:blur(16px) saturate(180%);
+  border:1px solid rgba(255,255,255,0.7); border-radius:16px; padding:14px 16px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.08);
+}
+.glass-card small{font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:var(--ink-3); font-weight:600; display:block; margin-bottom:4px}
+.glass-card strong{font-size:14px; font-weight:600; line-height:1.25}
+.hero-badge{
+  position:absolute; top:16px; left:16px;
+  background:#fff; border:1px solid var(--line); border-radius:999px;
+  padding:8px 14px; font-size:12px; font-weight:600; display:flex; align-items:center; gap:8px;
+}
+.hero-scroll-hint{
+  display:flex; align-items:center; gap:12px; margin-top:28px; color:var(--ink-3); font-size:12px; letter-spacing:0.08em; text-transform:uppercase; font-weight:600;
+}
+.hero-scroll-hint span{width:32px; height:1px; background:var(--line); display:inline-block}
+@media(max-width:1024px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-left{padding:24px 0 0}
+  .hero-visual{aspect-ratio:16/11}
+}
+
+/* TRUST */
+.trust{padding:64px 0 32px; border-bottom:1px solid var(--line-2)}
+.trust-head{display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap; align-items:end; margin-bottom:36px}
+.trust-head h2{font-size:28px; max-width:520px}
+.trust-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:16px}
+.trust-card{
+  background:var(--bg-card); border:1px solid var(--line); border-radius:var(--radius-l); padding:22px 20px;
+}
+.trust-card-icon{width:36px; height:36px; border-radius:10px; background:var(--beige); display:grid; place-items:center; margin-bottom:14px; font-size:16px}
+.trust-card h4{font-size:15px; font-weight:600; margin-bottom:8px}
+.trust-card p{font-size:13.5px; line-height:1.5; color:var(--ink-2)}
+@media(max-width:900px){ .trust-grid{grid-template-columns:1fr 1fr} }
+@media(max-width:560px){ .trust-grid{grid-template-columns:1fr} }
+
+/* PRODUCTS */
+.section{padding:96px 0}
+.section-head{margin-bottom:48px; display:flex; justify-content:space-between; align-items:end; gap:20px; flex-wrap:wrap}
+.section-head h2{font-size:clamp(28px,3.6vw,44px); line-height:0.98; max-width:640px}
+.section-head p{max-width:460px; color:var(--ink-2); font-size:16px}
+.products-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
+.product-card{
+  background:var(--bg-card); border:1px solid var(--line); border-radius:var(--radius-xl); overflow:hidden;
+  display:flex; flex-direction:column; transition:all .35s cubic-bezier(.16,1,.3,1);
+}
+.product-card:hover{transform:translateY(-4px); box-shadow:var(--shadow-card); border-color:#DDD8CF}
+.product-img{aspect-ratio:4/2.9; background:var(--bg-soft); overflow:hidden; position:relative}
+.product-img img{width:100%; height:100%; object-fit:cover; transition:transform .7s cubic-bezier(.16,1,.3,1)}
+.product-card:hover .product-img img{transform:scale(1.04)}
+.product-img-label{
+  position:absolute; top:14px; left:14px; background:rgba(255,255,255,0.92); backdrop-filter:blur(8px);
+  border-radius:999px; padding:6px 10px; font-size:11px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; border:1px solid rgba(0,0,0,0.06)
+}
+.product-body{padding:22px 22px 20px; display:flex; flex-direction:column; gap:12px; flex:1}
+.product-body h3{font-size:19px; font-weight:600}
+.product-body p{font-size:14px; color:var(--ink-2); line-height:1.55}
+.product-meta{margin-top:8px; display:flex; flex-wrap:wrap; gap:6px}
+.product-meta span{font-size:11px; padding:6px 10px; border-radius:999px; background:var(--bg-soft); border:1px solid var(--line-2); color:var(--ink-2); font-weight:500}
+.product-foot{margin-top:auto; padding-top:16px; display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--line-2)}
+.link-arrow{font-size:14px; font-weight:600; display:inline-flex; align-items:center; gap:6px; transition:gap .2s}
+.link-arrow:hover{gap:10px}
+@media(max-width:1024px){ .products-grid{grid-template-columns:1fr 1fr} }
+@media(max-width:640px){ .products-grid{grid-template-columns:1fr} .section{padding:72px 0} }
+
+/* SELECTOR */
+.selector{
+  background:var(--ink); color:#fff; border-radius:var(--radius-xl); padding:48px; position:relative; overflow:hidden;
+}
+.selector::before{
+  content:""; position:absolute; inset:0; background:radial-gradient(800px 400px at 80% -10%, rgba(255,255,255,0.08), transparent), radial-gradient(600px 400px at 0% 100%, rgba(138,155,174,0.18), transparent);
+  pointer-events:none;
+}
+.selector-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:48px; position:relative; z-index:1}
+.selector h2{font-size:clamp(28px,3vw,40px); color:#fff; margin-bottom:16px; line-height:0.98}
+.selector-desc{color:rgba(255,255,255,0.65); font-size:15px; line-height:1.6; max-width:480px; margin-bottom:32px}
+.selector-group{margin-bottom:24px}
+.selector-label{font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.5); font-weight:600; margin-bottom:12px; display:block}
+.chips{display:flex; flex-wrap:wrap; gap:8px}
+.chip{
+  padding:10px 16px; border-radius:999px; border:1px solid rgba(255,255,255,0.18); background:rgba(255,255,255,0.06);
+  color:rgba(255,255,255,0.9); font-size:13px; font-weight:500; cursor:pointer; transition:all .2s;
+}
+.chip:hover{border-color:rgba(255,255,255,0.35); background:rgba(255,255,255,0.1)}
+.chip.active{background:#fff; color:var(--ink); border-color:#fff}
+.selector-result{
+  background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:20px; padding:28px;
+  backdrop-filter:blur(12px);
+}
+.selector-result h4{font-size:18px; margin-bottom:12px}
+.selector-result p{font-size:14px; color:rgba(255,255,255,0.65); line-height:1.6; margin-bottom:20px}
+.selector-result ul{margin:0 0 20px; padding:0; list-style:none; display:grid; gap:8px}
+.selector-result li{display:flex; gap:10px; font-size:13px; color:rgba(255,255,255,0.85)}
+.selector-result li::before{content:"—"; color:rgba(255,255,255,0.4)}
+.selector-summary{
+  background:#fff; color:var(--ink); border-radius:14px; padding:16px; font-size:13px; line-height:1.5; margin-bottom:20px;
+}
+.btn-light{background:#fff; color:var(--ink)}
+.btn-light:hover{background:#F2F1ED}
+@media(max-width:960px){
+  .selector{padding:32px 20px} .selector-grid{grid-template-columns:1fr}
+}
+
+/* BENEFITS */
+.benefits-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:var(--radius-xl); overflow:hidden}
+.benefit{background:var(--bg-card); padding:32px 28px; display:flex; flex-direction:column; gap:14px}
+.benefit-num{font-size:12px; font-weight:600; letter-spacing:0.1em; color:var(--ink-3)}
+.benefit h4{font-size:18px; font-weight:600; line-height:1.2}
+.benefit p{font-size:14px; color:var(--ink-2); line-height:1.6}
+@media(max-width:900px){ .benefits-grid{grid-template-columns:1fr 1fr} }
+@media(max-width:600px){ .benefits-grid{grid-template-columns:1fr} }
+
+/* SHOWCASE */
+.showcase-tabs{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:28px; padding:6px; background:var(--bg-soft); border:1px solid var(--line-2); border-radius:999px; width:fit-content}
+.tab{padding:10px 18px; border-radius:999px; font-size:13px; font-weight:600; cursor:pointer; border:1px solid transparent; transition:all .2s; color:var(--ink-2)}
+.tab.active{background:var(--ink); color:#fff; border-color:var(--ink)}
+.tab:hover{color:var(--ink)}
+.gallery{display:grid; grid-template-columns:1.2fr 0.8fr; gap:20px}
+.gallery-main{border-radius:var(--radius-xl); overflow:hidden; background:var(--bg-soft); aspect-ratio:4/3; position:relative}
+.gallery-main img{width:100%; height:100%; object-fit:cover}
+.gallery-side{display:grid; grid-template-rows:1fr 1fr; gap:20px}
+.gallery-card{border-radius:var(--radius-l); overflow:hidden; background:var(--bg-soft); position:relative; min-height:200px}
+.gallery-card img{width:100%; height:100%; object-fit:cover}
+.gallery-info{
+  position:absolute; left:16px; right:16px; bottom:16px; background:rgba(255,255,255,0.9); backdrop-filter:blur(12px);
+  border-radius:12px; padding:12px 14px; display:flex; justify-content:space-between; align-items:center; gap:12px;
+}
+.gallery-info strong{font-size:13px}
+.gallery-info span{font-size:12px; color:var(--ink-2)}
+@media(max-width:900px){ .gallery{grid-template-columns:1fr} .gallery-side{grid-template-columns:1fr 1fr; grid-template-rows:auto} }
+@media(max-width:600px){ .gallery-side{grid-template-columns:1fr} }
+
+/* APPLICATIONS */
+.apps-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
+.app-card{border-radius:var(--radius-l); overflow:hidden; border:1px solid var(--line); background:#fff; transition:.3s}
+.app-card:hover{transform:translateY(-3px); box-shadow:var(--shadow-card)}
+.app-card-img{aspect-ratio:16/10; background:var(--bg-soft); overflow:hidden}
+.app-card-img img{width:100%; height:100%; object-fit:cover}
+.app-card-body{padding:18px 20px}
+.app-card-body h4{font-size:16px; margin-bottom:6px}
+.app-card-body p{font-size:13px; color:var(--ink-2); line-height:1.5}
+@media(max-width:900px){ .apps-grid{grid-template-columns:1fr 1fr} }
+@media(max-width:600px){ .apps-grid{grid-template-columns:1fr} }
+
+/* PROCESS */
+.process{position:relative}
+.process-line{height:1px; background:var(--line); position:absolute; top:56px; left:0; right:0; z-index:0}
+.process-grid{display:grid; grid-template-columns:repeat(5,1fr); gap:24px; position:relative; z-index:1}
+.step{background:var(--bg); padding-top:24px}
+.step-num{width:40px; height:40px; border-radius:50%; background:var(--ink); color:#fff; display:grid; place-items:center; font-weight:700; font-size:14px; margin-bottom:20px; border:4px solid var(--bg); box-shadow:0 0 0 1px var(--line)}
+.step h4{font-size:16px; margin-bottom:8px}
+.step p{font-size:13.5px; color:var(--ink-2); line-height:1.6}
+@media(max-width:1000px){
+  .process-line{display:none}
+  .process-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){ .process-grid{grid-template-columns:1fr} }
+
+/* PLACEHOLDER CASES */
+.cases-note{
+  border:1px dashed var(--line); border-radius:16px; padding:24px; background:var(--beige);
+  display:flex; gap:16px; align-items:start;
+}
+.cases-note-icon{width:36px; height:36px; border-radius:10px; background:#fff; border:1px solid var(--line); display:grid; place-items:center; flex-shrink:0}
+.cases-note p{font-size:13.5px; color:var(--ink-2); line-height:1.6}
+
+/* PRICING */
+.pricing{display:grid; grid-template-columns:0.9fr 1.1fr; gap:48px; align-items:start; background:var(--bg-card); border:1px solid var(--line); border-radius:var(--radius-xl); padding:40px}
+.pricing ul{list-style:none; padding:0; margin:20px 0 0; display:grid; gap:12px}
+.pricing li{display:flex; gap:12px; font-size:14px; color:var(--ink-2); line-height:1.5}
+.pricing li i{width:28px; height:28px; border-radius:999px; background:var(--bg-soft); border:1px solid var(--line-2); display:grid; place-items:center; flex-shrink:0; font-style:normal; font-size:12px}
+@media(max-width:900px){ .pricing{grid-template-columns:1fr; padding:28px 20px} }
+
+/* FAQ */
+.faq-grid{display:grid; grid-template-columns:0.9fr 1.1fr; gap:48px}
+.faq-item{border-bottom:1px solid var(--line-2); padding:0}
+.faq-q{width:100%; display:flex; justify-content:space-between; align-items:center; gap:16px; padding:20px 0; background:none; border:none; cursor:pointer; text-align:left; font-size:16px; font-weight:600; color:var(--ink)}
+.faq-q span{width:32px; height:32px; border-radius:50%; border:1px solid var(--line); display:grid; place-items:center; flex-shrink:0; transition:.3s}
+.faq-item.open .faq-q span{transform:rotate(45deg); background:var(--ink); color:#fff; border-color:var(--ink)}
+.faq-a{max-height:0; overflow:hidden; transition:max-height .4s cubic-bezier(.16,1,.3,1), opacity .3s; opacity:0}
+.faq-item.open .faq-a{max-height:300px; opacity:1; padding-bottom:20px}
+.faq-a p{font-size:14px; color:var(--ink-2); line-height:1.65; max-width:560px}
+@media(max-width:900px){ .faq-grid{grid-template-columns:1fr} }
+
+/* FINAL CTA */
+.final{
+  background:var(--ink); color:#fff; border-radius:var(--radius-xl); padding:48px; position:relative; overflow:hidden;
+}
+.final::before{content:""; position:absolute; inset:0; background:radial-gradient(700px 400px at 10% 0%, rgba(255,255,255,0.07), transparent), radial-gradient(600px 400px at 90% 100%, rgba(138,155,174,0.22), transparent); pointer-events:none}
+.final-grid{display:grid; grid-template-columns:0.9fr 1.1fr; gap:48px; position:relative; z-index:1}
+.final h2{font-size:clamp(28px,3.2vw,42px); line-height:0.98; margin-bottom:16px}
+.final-desc{color:rgba(255,255,255,0.65); font-size:15px; line-height:1.6; margin-bottom:24px}
+.form{
+  background:#fff; border-radius:20px; padding:28px; color:var(--ink);
+}
+.form-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+.form-field{display:flex; flex-direction:column; gap:6px}
+.form-field.full{grid-column:1/-1}
+.form-field label{font-size:11px; letter-spacing:0.08em; text-transform:uppercase; font-weight:600; color:var(--ink-3)}
+.form-field input, .form-field select, .form-field textarea{
+  height:48px; border-radius:12px; border:1px solid var(--line); padding:0 14px; font-size:14px; background:#fff; outline:none; transition:border .2s, box-shadow .2s; width:100%;
+}
+.form-field textarea{height:auto; padding:12px 14px; resize:vertical; min-height:96px}
+.form-field input:focus, .form-field select:focus, .form-field textarea:focus{border-color:var(--ink); box-shadow:0 0 0 4px rgba(14,18,22,0.06)}
+.form-field.error input, .form-field.error select, .form-field.error textarea{border-color:#D14343; background:#FFF6F6}
+.error-msg{font-size:11px; color:#D14343; display:none}
+.form-field.error .error-msg{display:block}
+.file-drop{border:1px dashed var(--line); border-radius:12px; padding:14px; display:flex; align-items:center; gap:12px; font-size:13px; color:var(--ink-2); cursor:pointer; transition:.2s}
+.file-drop:hover{border-color:var(--ink)}
+.checkbox{display:flex; gap:10px; align-items:start; font-size:12px; color:var(--ink-2); line-height:1.5; cursor:pointer}
+.checkbox input{margin-top:2px}
+.form-foot{display:flex; gap:12px; align-items:center; margin-top:8px; flex-wrap:wrap}
+.form-foot small{font-size:11px; color:var(--ink-3); line-height:1.4}
+.success-msg{display:none; background:#F0F6F0; border:1px solid #C5DFC5; border-radius:12px; padding:16px; font-size:13px; color:#2A5A2A; margin-top:16px}
+.success-msg.show{display:block}
+@media(max-width:960px){ .final{padding:28px 20px} .final-grid{grid-template-columns:1fr} .form-grid{grid-template-columns:1fr} }
+
+/* FOOTER */
+.footer{padding:56px 0 32px; border-top:1px solid var(--line-2); margin-top:48px}
+.footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1.2fr; gap:32px}
+.footer-brand p{font-size:13px; color:var(--ink-2); line-height:1.6; margin-top:12px; max-width:320px}
+.footer h5{font-size:12px; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:16px}
+.footer-links{display:grid; gap:10px}
+.footer-links a{font-size:13px; color:var(--ink-2)}
+.footer-links a:hover{color:var(--ink)}
+.footer-bottom{margin-top:40px; padding-top:24px; border-top:1px solid var(--line-2); display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; font-size:12px; color:var(--ink-3)}
+@media(max-width:900px){ .footer-grid{grid-template-columns:1fr 1fr} }
+@media(max-width:560px){ .footer-grid{grid-template-columns:1fr} }
+
+/* REVEAL */
+.reveal{opacity:0; transform:translateY(16px); transition:opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1)}
+.reveal.in{opacity:1; transform:none}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1; transform:none; transition:none}
+  html{scroll-behavior:auto}
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-thumb{background:#D9D5CE; border-radius:999px}
+</style>
+</head>
+<body>
+
+<div class="nav-wrap">
+  <div class="container nav">
+    <a href="#" class="nav-logo">
+      <span class="nav-logo-mark">A</span>
+      <span>ALUMICO</span>
+      <span style="font-weight:400; color:var(--ink-3); font-size:12px; letter-spacing:0.06em; margin-left:2px">GREECE — CIS</span>
+    </a>
+    <nav class="nav-links" aria-label="Основная навигация">
+      <a href="#products">Продукция</a>
+      <a href="projects.html">Проекты и системы</a>
+      <a href="#solutions">Решения</a>
+      <a href="#applications">Применение</a>
+      <a href="#about">О компании</a>
+      <a href="contacts.html">Контакты</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#request" class="btn btn-primary" style="height:44px">Запросить расчет</a>
+      <button class="hamburger" id="hamburger" aria-label="Открыть меню"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</div>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#products">Продукция</a>
+  <a href="projects.html">Проекты и системы</a>
+  <a href="#solutions">Решения</a>
+  <a href="#applications">Применение</a>
+  <a href="#about">О компании</a>
+  <a href="contacts.html">Контакты</a>
+  <a href="#faq">FAQ</a>
+  <a href="#request" class="btn btn-primary">Запросить расчет по проекту</a>
+  <div style="margin-top:24px; font-size:13px; color:var(--ink-2)">Производство в Греции · Поставки в Россию и СНГ · Техническая поддержка</div>
+</div>
+
+<main>
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-left reveal">
+        <span class="eyebrow"><i></i> Производство в Греции · Европейское качество</span>
+        <h1>Алюминиевые архитектурные системы для фасадов, ограждений и современных строительных проектов</h1>
+        <p class="hero-desc">Поставляем фасадные профильные системы, архитектурные и стеклянные ограждения, ветрозащиту и парапеты. Помогаем девелоперам, архитекторам и фасадным подрядчикам подобрать систему, подготовить спецификацию и рассчитать проект без рисков и задержек.</p>
+        <div class="hero-ctas">
+          <a href="#request" class="btn btn-primary">Получить расчет проекта</a>
+          <a href="#solutions" class="btn btn-secondary">Подобрать систему</a>
+        </div>
+        <div class="hero-trust">
+          <div class="hero-trust-item"><span style="width:28px; height:28px; border-radius:999px; background:#fff; border:1px solid var(--line); display:grid; place-items:center">◐</span><div><b>Для жилых, коммерческих</b><br>и общественных объектов</div></div>
+          <div class="hero-trust-item"><span style="width:28px; height:28px; border-radius:999px; background:#fff; border:1px solid var(--line); display:grid; place-items:center">✦</span><div><b>Техническая поддержка</b><br>на всех этапах проекта</div></div>
+        </div>
+        <div class="hero-scroll-hint"><span></span> Листайте — продукция и подбор решений</div>
+      </div>
+      <div class="hero-visual reveal" style="transition-delay:.1s">
+        <img src="image-search/modern-aluminum-facade-building-architec-2.jpg" alt="Современный фасад с алюминиевыми системами" onerror="this.src='https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200'">
+        <div class="hero-badge"><span style="width:8px; height:8px; border-radius:50%; background:#0E1216; display:inline-block"></span> Производство — Греция</div>
+        <div class="hero-visual-overlay">
+          <div class="glass-card">
+            <small>Система</small>
+            <strong>Фасадные профили с прецизионной геометрией</strong>
+          </div>
+          <div class="glass-card">
+            <small>Поддержка</small>
+            <strong>Консультация инженера и подбор по чертежам</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="trust" id="about">
+  <div class="container">
+    <div class="trust-head reveal">
+      <h2>Надежный технический партнер для сложных архитектурных задач</h2>
+      <p style="color:var(--ink-2); max-width:420px; font-size:15px">Работаем как часть вашей проектной команды: помогаем выбрать решение, которое соответствует эстетике, бюджету и срокам, и сопровождаем до поставки.</p>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-card reveal"><div class="trust-card-icon">◍</div><h4>Производство в Греции</h4><p>Европейские стандарты изготовления, контроль качества на каждом этапе и стабильная геометрия профилей.</p></div>
+      <div class="trust-card reveal" style="transition-delay:.05s"><div class="trust-card-icon">◎</div><h4>Инженерная экспертиза</h4><p>Помогаем с выбором системы по нагрузкам, узлам примыкания, типу заполнения и требованиям проекта.</p></div>
+      <div class="trust-card reveal" style="transition-delay:.1s"><div class="trust-card-icon">⬙</div><h4>Прецизионная обработка</h4><p>Точная резка, обработка и подготовка комплектующих для предсказуемого монтажа на объекте.</p></div>
+      <div class="trust-card reveal" style="transition-delay:.15s"><div class="trust-card-icon">✦</div><h4>Сопровождение документации</h4><p>Поддерживаем на этапе спецификации, ведомостей и согласования технических решений с архитектором.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="section" id="products">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Системы для фасадов, ограждений, ветрозащиты и парапетов</h2>
+      <p>Линейка решений для типовых и нестандартных задач — от жилых комплексов до офисов и общественных зданий. Поможем подобрать конфигурацию под ваш проект.</p>
+    </div>
+    <div class="products-grid">
+      <article class="product-card reveal">
+        <div class="product-img"><img src="image-search/modern-aluminum-facade-building-architec-1.jpg" alt="Алюминиевые фасадные системы" onerror="this.src='https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800'"><span class="product-img-label">Фасады</span></div>
+        <div class="product-body">
+          <h3>Алюминиевые фасадные профильные системы</h3>
+          <p>Для вентилируемых фасадов и светопрозрачных конструкций. Совместимость с различными типами облицовки и заполнения.</p>
+          <div class="product-meta"><span>Жилые комплексы</span><span>Бизнес-центры</span><span>ТЦ и МФК</span></div>
+          <div class="product-foot"><a href="#request" class="link-arrow">Подобрать решение →</a><span style="font-size:11px; color:var(--ink-3); text-transform:uppercase; letter-spacing:0.08em">Под запрос</span></div>
+        </div>
+      </article>
+      <article class="product-card reveal" style="transition-delay:.05s">
+        <div class="product-img"><img src="image-search/aluminum-glass-railing-balcony-modern-ar-2.jpg" alt="Архитектурные ограждения" onerror="this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800'"><span class="product-img-label">Ограждения</span></div>
+        <div class="product-body">
+          <h3>Архитектурные ограждения</h3>
+          <p>Системы для балконов, террас, лестниц и эксплуатируемых кровель. Чистая геометрия, скрытый крепеж, стойкость к нагрузкам.</p>
+          <div class="product-meta"><span>Балконы</span><span>Террасы</span><span>Лестницы</span></div>
+          <div class="product-foot"><a href="#request" class="link-arrow">Подробнее →</a><span style="font-size:11px; color:var(--ink-3)">Стекло / металл</span></div>
+        </div>
+      </article>
+      <article class="product-card reveal" style="transition-delay:.1s">
+        <div class="product-img"><img src="image-search/aluminum-glass-railing-balcony-modern-ar-1.jpg" alt="Стеклянные ограждения" onerror="this.src='https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800'"><span class="product-img-label">Стекло</span></div>
+        <div class="product-body">
+          <h3>Стеклянные ограждения и балюстрады</h3>
+          <p>Безрамные и стоечные решения с закаленным стеклом. Акцент на безопасность, прозрачность и минималистичный вид.</p>
+          <div class="product-meta"><span>Безрамные</span><span>Стоечные</span><span>Точечное крепление</span></div>
+          <div class="product-foot"><a href="#request" class="link-arrow">Подобрать решение →</a><span style="font-size:11px; color:var(--ink-3)">ESG / VSG</span></div>
+        </div>
+      </article>
+      <article class="product-card reveal">
+        <div class="product-img"><img src="image-search/aluminum-glass-railing-balcony-modern-ar-5.jpg" alt="Ветрозащита" onerror="this.src='https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800'"><span class="product-img-label">Ветрозащита</span></div>
+        <div class="product-body">
+          <h3>Системы ветрозащиты</h3>
+          <p>Раздвижные и стационарные ветрозащитные экраны для террас, ресторанов, балконов и общественных пространств.</p>
+          <div class="product-meta"><span>Террасы HoReCa</span><span>Балконы</span><span>Кровли</span></div>
+          <div class="product-foot"><a href="#request" class="link-arrow">Подробнее →</a><span style="font-size:11px; color:var(--ink-3)">Раздвижные / Стационарные</span></div>
+        </div>
+      </article>
+      <article class="product-card reveal" style="transition-delay:.05s">
+        <div class="product-img"><img src="image-search/modern-aluminum-facade-building-architec-4.webp" alt="Парапеты и кровельные решения" onerror="this.src='https://images.unsplash.com/photo-1497366811353-2533774fa78d?q=80&w=800'"><span class="product-img-label">Кровля</span></div>
+        <div class="product-body">
+          <h3>Парапеты и кровельные решения</h3>
+          <p>Алюминиевые парапетные крышки, отливы и элементы завершения кровли. Герметичность, аккуратный узел, долговечность.</p>
+          <div class="product-meta"><span>Парапетные крышки</span><span>Отливы</span><span>Кровельный край</span></div>
+          <div class="product-foot"><a href="#request" class="link-arrow">Подобрать решение →</a><span style="font-size:11px; color:var(--ink-3)">Под размер</span></div>
+        </div>
+      </article>
+      <article class="product-card reveal" style="transition-delay:.1s">
+        <div class="product-img"><img src="image-search/aluminum-profile-system-technical-detail-3.jpg" alt="Кастомные архитектурные системы" onerror="this.src='https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=800'"><span class="product-img-label">Custom</span></div>
+        <div class="product-body">
+          <h3>Кастомные архитектурные системы</h3>
+          <p>Нестандартные узлы, индивидуальные профили и решения под авторскую архитектуру. Проработка совместно с вашим бюро.</p>
+          <div class="product-meta"><span>Авторские узлы</span><span>Спец. цвета</span><span>Сложная геометрия</span></div>
+          <div class="product-foot"><a href="#request" class="link-arrow">Обсудить проект →</a><span style="font-size:11px; color:var(--ink-3)">Инженерная проработка</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION SELECTOR -->
+<section class="section" id="solutions" style="padding-top:0">
+  <div class="container">
+    <div class="selector reveal">
+      <div class="selector-grid">
+        <div>
+          <span class="eyebrow" style="background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.15); color:rgba(255,255,255,0.8)"><i style="background:#fff"></i> Подбор за 2 минуты</span>
+          <h2>Поможем выбрать систему под параметры вашего проекта</h2>
+          <p class="selector-desc">Отметьте тип объекта, стадию и задачу — сформируем предварительную рекомендацию и подготовим расчет. Без навязчивых звонков — только по делу.</p>
+          
+          <div class="selector-group">
+            <span class="selector-label">Тип объекта</span>
+            <div class="chips" data-group="building">
+              <button class="chip" data-value="Жилой комплекс">Жилой комплекс</button>
+              <button class="chip" data-value="Офисное здание">Офисное здание</button>
+              <button class="chip" data-value="Отель">Отель</button>
+              <button class="chip" data-value="ТЦ / Ритейл">ТЦ / Ритейл</button>
+              <button class="chip" data-value="Частный дом">Частный дом</button>
+              <button class="chip" data-value="Общественное здание">Общественное здание</button>
+            </div>
+          </div>
+          <div class="selector-group">
+            <span class="selector-label">Стадия проекта</span>
+            <div class="chips" data-group="stage">
+              <button class="chip" data-value="Концепция">Концепция</button>
+              <button class="chip" data-value="Рабочая документация">Рабочая документация</button>
+              <button class="chip" data-value="Тендер / смета">Тендер / смета</button>
+              <button class="chip" data-value="Закупка / монтаж">Закупка / монтаж</button>
+            </div>
+          </div>
+          <div class="selector-group">
+            <span class="selector-label">Что нужно подобрать</span>
+            <div class="chips" data-group="product">
+              <button class="chip" data-value="Фасадные системы">Фасадные системы</button>
+              <button class="chip" data-value="Ограждения">Ограждения</button>
+              <button class="chip" data-value="Стеклянные балюстрады">Стеклянные балюстрады</button>
+              <button class="chip" data-value="Ветрозащита">Ветрозащита</button>
+              <button class="chip" data-value="Парапеты">Парапеты</button>
+            </div>
+          </div>
+          <div class="selector-group">
+            <span class="selector-label">Требования</span>
+            <div class="chips" data-group="req">
+              <button class="chip" data-value="Минимализм и скрытый крепеж">Минимализм</button>
+              <button class="chip" data-value="Повышенные ветровые нагрузки">Ветровые нагрузки</button>
+              <button class="chip" data-value="Сложная геометрия">Сложная геометрия</button>
+              <button class="chip" data-value="Сжатые сроки">Сжатые сроки</button>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="selector-result">
+            <h4>Ваша конфигурация</h4>
+            <div class="selector-summary" id="selectorSummary">Выберите параметры слева — здесь появится краткое резюме для инженера.</div>
+            <p id="selectorHint">На основе выбора мы подготовим 2–3 совместимые системы, узлы примыкания и предварительную ведомость.</p>
+            <ul id="selectorList">
+              <li>Консультация технического специалиста</li>
+              <li>Подбор по чертежам и ТЗ</li>
+              <li>Предварительный расчет и сроки</li>
+            </ul>
+            <a href="#request" class="btn btn-light" style="width:100%" id="selectorCta">Получить расчет и подбор системы</a>
+            <div style="margin-top:12px; font-size:11px; color:rgba(255,255,255,0.5); text-align:center">Отвечаем в течение рабочего дня · Без спама</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Практические преимущества для девелоперов, архитекторов и подрядчиков</h2>
+      <p>Только проверяемые факты. Без выдуманных сертификатов и обещаний — фокус на том, что действительно влияет на результат проекта.</p>
+    </div>
+    <div class="benefits-grid reveal">
+      <div class="benefit"><span class="benefit-num">01 — ПРОИЗВОДСТВО</span><h4>Европейское производство в Греции</h4><p>Стабильная геометрия, аккуратная обработка поверхности и предсказуемое качество партии — важно для премиальных объектов.</p></div>
+      <div class="benefit"><span class="benefit-num">02 — МАТЕРИАЛЫ</span><h4>Надежные материалы и комплектующие</h4><p>Алюминиевые сплавы для наружного применения, совместимость с закаленным и триплекс-стеклом, уплотнители и крепеж для уличной эксплуатации.</p></div>
+      <div class="benefit"><span class="benefit-num">03 — ГИБКОСТЬ</span><h4>Архитектурная гибкость</h4><p>Вариативность по высоте, вылету, типу заполнения, цвету и отделке. Возможность адаптации узла под авторский замысел.</p></div>
+      <div class="benefit"><span class="benefit-num">04 — ПОДДЕРЖКА</span><h4>Поддержка с выбором системы</h4><p>Помогаем сопоставить эстетику, нагрузки, бюджет и монтаж. Даем рекомендации, а не навязываем один вариант.</p></div>
+      <div class="benefit"><span class="benefit-num">05 — ДОКУМЕНТАЦИЯ</span><h4>Помощь со спецификацией</h4><p>Подготовим ведомость, узлы и описания для включения в проектную и тендерную документацию совместно с вашим бюро.</p></div>
+      <div class="benefit"><span class="benefit-num">06 — КООРДИНАЦИЯ</span><h4>Профессиональная коммуникация</h4><p>Четкий процесс: фиксируем договоренности, сроки и состав поставки. Один технический контакт на проект.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SHOWCASE -->
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Как выглядят системы в реализованных узлах</h2>
+      <p>Крупные планы профилей, соединений, отделок и монтажа. Выберите категорию, чтобы увидеть релевантные детали.</p>
+    </div>
+    <div class="showcase-tabs reveal" id="showcaseTabs">
+      <button class="tab active" data-filter="all">Все</button>
+      <button class="tab" data-filter="facade">Фасадные системы</button>
+      <button class="tab" data-filter="railing">Ограждения</button>
+      <button class="tab" data-filter="wind">Ветрозащита</button>
+      <button class="tab" data-filter="parapet">Парапеты</button>
+    </div>
+    <div class="gallery reveal">
+      <div class="gallery-main" data-cat="facade">
+        <img id="galleryMainImg" src="image-search/modern-aluminum-facade-building-architec-3.jpg" alt="Фасадная система крупно" onerror="this.src='https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=1200'">
+        <div class="gallery-info"><div><strong id="galleryMainTitle">Фасадная система — узел примыкания</strong><br><span id="galleryMainSub">Точный рез, скрытый крепеж, совместимость с облицовкой</span></div><span>Греция</span></div>
+      </div>
+      <div class="gallery-side">
+        <div class="gallery-card" data-cat="railing" style="cursor:pointer" onclick="setGallery('railing')">
+          <img src="image-search/aluminum-glass-railing-balcony-modern-ar-3.jpg" alt="Стеклянное ограждение" onerror="this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800'">
+          <div class="gallery-info"><div><strong>Стеклянная балюстрада</strong><br><span>Безрамное решение, ESG 12мм</span></div></div>
+        </div>
+        <div class="gallery-card" data-cat="wind" style="cursor:pointer" onclick="setGallery('wind')">
+          <img src="image-search/aluminum-profile-system-technical-detail-2.jpg" alt="Деталь профиля" onerror="this.src='https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=800'">
+          <div class="gallery-info"><div><strong>Прецизионная обработка профиля</strong><br><span>Геометрия под монтаж без доработок</span></div></div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:16px; display:grid; grid-template-columns:repeat(4,1fr); gap:16px" class="gallery-thumbs" id="galleryThumbs">
+      <!-- JS fills -->
+    </div>
+  </div>
+</section>
+
+<!-- APPLICATIONS -->
+<section class="section" id="applications">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Применение в жилых, коммерческих и общественных проектах</h2>
+      <p>Подбираем решение с учетом типа здания, ветровых нагрузок, сценариев использования и требований к эстетике.</p>
+    </div>
+    <div class="apps-grid">
+      <div class="app-card reveal"><div class="app-card-img"><img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=800" alt="Жилые комплексы" onerror="this.style.display='none'"></div><div class="app-card-body"><h4>Жилые комплексы</h4><p>Балконные ограждения, фасадные системы, парапеты для кровель. Единый язык архитектуры для всего комплекса.</p></div></div>
+      <div class="app-card reveal" style="transition-delay:.05s"><div class="app-card-img"><img src="https://images.unsplash.com/photo-1497366811353-2533774fa78d?q=80&w=800" alt="Офисные здания" onerror="this.style.display='none'"></div><div class="app-card-body"><h4>Офисные здания</h4><p>Лаконичные фасадные и ограждающие системы для бизнес-центров класса A и B с акцентом на долговечность.</p></div></div>
+      <div class="app-card reveal" style="transition-delay:.1s"><div class="app-card-img"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=800" alt="Отели" onerror="this.style.display='none'"></div><div class="app-card-body"><h4>Отели и апарт-отели</h4><p>Ветрозащита для террас, стеклянные ограждения для видовых номеров и общественных зон.</p></div></div>
+      <div class="app-card reveal"><div class="app-card-img"><img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800" alt="Ритейл" onerror="this.style.display='none'"></div><div class="app-card-body"><h4>Ритейл и коммерческие объекты</h4><p>Решения для входных групп, атриумов и эксплуатируемых кровель с высокой проходимостью.</p></div></div>
+      <div class="app-card reveal" style="transition-delay:.05s"><div class="app-card-img"><img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=800" alt="Частные резиденции" onerror="this.style.display='none'"></div><div class="app-card-body"><h4>Частные резиденции</h4><p>Индивидуальные ограждения, парапеты и ветрозащита под авторскую архитектуру и ландшафт.</p></div></div>
+      <div class="app-card reveal" style="transition-delay:.1s"><div class="app-card-img"><img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=800" alt="Общественные здания" onerror="this.style.display='none'"></div><div class="app-card-body"><h4>Общественные и смешанные здания</h4><p>Универсальные системы для МФК, культурных и образовательных объектов.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section">
+  <div class="container process">
+    <div class="section-head reveal">
+      <h2>Как проходит работа над проектом</h2>
+      <p>Прозрачный процесс без лишних итераций. Фиксируем задачу, подбираем систему, считаем и согласуем поставку.</p>
+    </div>
+    <div class="process-line"></div>
+    <div class="process-grid">
+      <div class="step reveal"><div class="step-num">1</div><h4>Отправляете вводные</h4><p>Тип объекта, чертежи, фото, ТЗ, желаемые системы и примерный объем.</p></div>
+      <div class="step reveal" style="transition-delay:.05s"><div class="step-num">2</div><h4>Обсуждаем требования</h4><p>Уточняем эстетику, нагрузки, узлы, отделку и ограничения по монтажу.</p></div>
+      <div class="step reveal" style="transition-delay:.1s"><div class="step-num">3</div><h4>Подбираем систему</h4><p>Предлагаем 2–3 совместимых варианта с узлами и ведомостью комплектующих.</p></div>
+      <div class="step reveal" style="transition-delay:.15s"><div class="step-num">4</div><h4>Расчет и предложение</h4><p>Предварительный расчет по проекту, сроки производства и условия поставки.</p></div>
+      <div class="step reveal" style="transition-delay:.2s"><div class="step-num">5</div><h4>Координация поставки</h4><p>Согласуем детали, упаковку, логистику и поддержку на этапе монтажа.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CASES PLACEHOLDER -->
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="cases-note reveal">
+      <div class="cases-note-icon">◐</div>
+      <div>
+        <div style="font-size:12px; letter-spacing:0.08em; text-transform:uppercase; font-weight:700; margin-bottom:6px">Блок отзывов и кейсов — placeholder</div>
+        <p>Здесь будут размещены реальные отзывы и завершенные проекты после предоставления материалов заказчиком. Мы не публикуем вымышленные кейсы, логотипы клиентов и оценки без подтверждения. Если у вас есть проект для референса — приложите его в форме ниже, и мы подготовим страницу проекта в едином стиле сайта.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section">
+  <div class="container">
+    <div class="pricing reveal">
+      <div>
+        <span class="eyebrow">Стоимость</span>
+        <h2 style="font-size:32px; margin-top:16px; line-height:0.98">Стоимость рассчитывается под параметры проекта</h2>
+        <p style="color:var(--ink-2); font-size:14px; line-height:1.6; margin-top:16px">Мы не публикуем фиксированные цены — итог зависит от конфигурации системы и объема. Прозрачно объясняем, из чего складывается расчет, и предлагаем оптимизацию без потери качества узла.</p>
+        <ul>
+          <li><i>—</i><span>Тип системы и конфигурация профиля</span></li>
+          <li><i>—</i><span>Размеры, количества и раскрой</span></li>
+          <li><i>—</i><span>Отделка, цвет по RAL, анодирование</span></li>
+          <li><i>—</i><span>Тип стекла или заполнения</span></li>
+          <li><i>—</i><span>Сложность узлов и нестандартные элементы</span></li>
+          <li><i>—</i><span>Логистика и условия поставки</span></li>
+        </ul>
+      </div>
+      <div style="background:var(--bg-soft); border:1px solid var(--line-2); border-radius:16px; padding:28px">
+        <h4 style="font-size:18px; margin-bottom:12px">Что вы получите в ответ</h4>
+        <div style="display:grid; gap:14px; margin-bottom:24px">
+          <div style="display:flex; gap:12px; font-size:14px; line-height:1.5"><span style="width:28px; height:28px; border-radius:999px; background:#fff; border:1px solid var(--line); display:grid; place-items:center; flex-shrink:0">✓</span><span><b>Подбор системы</b> — 2–3 варианта под ваш объект с пояснением плюсов</span></div>
+          <div style="display:flex; gap:12px; font-size:14px; line-height:1.5"><span style="width:28px; height:28px; border-radius:999px; background:#fff; border:1px solid var(--line); display:grid; place-items:center; flex-shrink:0">✓</span><span><b>Предварительный расчет</b> — по ведомости и спецификации</span></div>
+          <div style="display:flex; gap:12px; font-size:14px; line-height:1.5"><span style="width:28px; height:28px; border-radius:999px; background:#fff; border:1px solid var(--line); display:grid; place-items:center; flex-shrink:0">✓</span><span><b>Узлы и рекомендации</b> — для согласования с архитектором и подрядчиком</span></div>
+        </div>
+        <a href="#request" class="btn btn-primary" style="width:100%">Запросить расчет по проекту</a>
+        <div style="font-size:11px; color:var(--ink-3); text-align:center; margin-top:10px">Обычно отвечаем в течение рабочего дня</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="container faq-grid">
+    <div class="reveal">
+      <span class="eyebrow">FAQ</span>
+      <h2 style="font-size:clamp(28px,3vw,40px); margin-top:16px; line-height:0.98">Ответы на частые вопросы проектировщиков и закупщиков</h2>
+      <p style="color:var(--ink-2); font-size:14px; line-height:1.6; margin-top:16px; max-width:360px">Если не нашли ответ — напишите нам, подключим технического специалиста.</p>
+    </div>
+    <div class="reveal" style="transition-delay:.05s">
+      <div class="faq-item open">
+        <button class="faq-q">Какие продуктовые категории вы поставляете? <span>+</span></button>
+        <div class="faq-a"><p>Алюминиевые фасадные профильные системы, архитектурные ограждения, стеклянные ограждения и балюстрады, системы ветрозащиты, парапеты и кровельные элементы, а также кастомные решения под авторскую архитектуру.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Где производится продукция? <span>+</span></button>
+        <div class="faq-a"><p>Продукция изготавливается в Греции с соблюдением европейских стандартов качества. Это обеспечивает стабильную геометрию, аккуратную отделку и предсказуемость при монтаже.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Есть ли минимальный объем заказа? <span>+</span></button>
+        <div class="faq-a"><p>Минимальный объем зависит от типа системы и отделки. Для точного ответа пришлите ведомость или примерный метраж — подскажем оптимальный вариант раскроя и комплектации.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Какие отделки и цвета доступны? <span>+</span></button>
+        <div class="faq-a"><p>Доступны порошковая окраска по палитре RAL, анодирование и специальные текстуры под запрос. Рекомендуем выбирать отделку совместно с образцами — поможем с подбором под фасад и интерьер.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Предоставляете ли техническую документацию? <span>+</span></button>
+        <div class="faq-a"><p>Да. Помогаем с подбором системы, узлами примыкания, ведомостями и описаниями для включения в проектную документацию. Работаем совместно с вашим архитектурным бюро и фасадным подрядчиком.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Какие сроки производства и поставки? <span>+</span></button>
+        <div class="faq-a"><p>Сроки зависят от системы, отделки, объема и логистики. После получения вводных даем ориентировочный график производства и поставки, фиксируем его в предложении.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Выполняете ли монтаж? <span>+</span></button>
+        <div class="faq-a"><p>Мы специализируемся на поставке систем и технической поддержке. Монтаж выполняют ваши фасадные подрядчики — мы сопровождаем узлами, рекомендациями и консультациями.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Можно ли заказать кастомное решение? <span>+</span></button>
+        <div class="faq-a"><p>Да. Если типовые системы не закрывают задачу, прорабатываем нестандартный узел или профиль совместно с инженером. Пришлите эскиз или описание задачи.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section">
+  <div class="container">
+    <div class="final reveal" id="request">
+      <div class="final-grid">
+        <div>
+          <h2>Двигаем проект вперед — от подбора до расчета</h2>
+          <p class="final-desc">Отправьте вводные по объекту — подберем систему, подготовим ведомость и предварительный расчет. Работаем с девелоперами, архитектурными бюро и фасадными подрядчиками в России и СНГ.</p>
+          <div style="display:grid; gap:12px; margin-top:24px">
+            <div style="display:flex; gap:12px; align-items:center; font-size:13px; color:rgba(255,255,255,0.7)"><span style="width:32px; height:32px; border-radius:999px; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.15); display:grid; place-items:center">✦</span> Ответ технического специалиста в течение рабочего дня</div>
+            <div style="display:flex; gap:12px; align-items:center; font-size:13px; color:rgba(255,255,255,0.7)"><span style="width:32px; height:32px; border-radius:999px; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.15); display:grid; place-items:center">◐</span> Конфиденциальность проектных данных</div>
+          </div>
+          <div style="margin-top:32px; padding-top:24px; border-top:1px solid rgba(255,255,255,0.12); display:grid; gap:8px; font-size:13px; color:rgba(255,255,255,0.6)">
+            <div>Прямая связь: <a href="mailto:info@alumico.example" style="color:#fff; text-decoration:underline; text-underline-offset:4px">info@alumico.example</a> · <a href="tel:+70000000000" style="color:#fff">+7 000 000-00-00</a></div>
+            <div>Производство: Греция · Поставки: Россия и СНГ</div>
+          </div>
+        </div>
+        <form class="form" id="leadForm" novalidate>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px">
+            <h4 style="font-size:18px">Запросить расчет и подбор</h4>
+            <span style="font-size:11px; background:var(--bg-soft); border:1px solid var(--line-2); padding:6px 10px; border-radius:999px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase">Форма проекта</span>
+          </div>
+          <div class="form-grid">
+            <div class="form-field"><label for="name">Имя *</label><input id="name" name="name" placeholder="Иван Петров" required><span class="error-msg">Укажите имя</span></div>
+            <div class="form-field"><label for="company">Компания *</label><input id="company" name="company" placeholder="ООО «Девелопер»" required><span class="error-msg">Укажите компанию</span></div>
+            <div class="form-field"><label for="contact">Телефон или email *</label><input id="contact" name="contact" placeholder="+7 ... или email" required><span class="error-msg">Укажите контакт</span></div>
+            <div class="form-field"><label for="projectType">Тип проекта</label><select id="projectType" name="projectType"><option value="">Выберите</option><option>Жилой комплекс</option><option>Офисное здание</option><option>Отель</option><option>ТЦ / Ритейл</option><option>Частный дом</option><option>Общественное здание</option><option>Другое</option></select></div>
+            <div class="form-field"><label for="category">Категория продукции *</label><select id="category" name="category" required><option value="">Выберите</option><option>Фасадные системы</option><option>Архитектурные ограждения</option><option>Стеклянные ограждения</option><option>Ветрозащита</option><option>Парапеты</option><option>Кастомное решение</option><option>Несколько категорий</option></select><span class="error-msg">Выберите категорию</span></div>
+            <div class="form-field"><label for="scope">Примерный объем</label><input id="scope" name="scope" placeholder="Напр., 240 м.п. ограждений, 1200 м² фасада"></div>
+            <div class="form-field full"><label for="details">Задача и требования</label><textarea id="details" name="details" placeholder="Опишите задачу: тип здания, стадия, требования к эстетике, нагрузкам, отделке, сроки..."></textarea></div>
+            <div class="form-field full">
+              <label>Чертежи и спецификации</label>
+              <label class="file-drop" for="file"><span style="width:32px; height:32px; border-radius:8px; background:var(--bg-soft); border:1px solid var(--line-2); display:grid; place-items:center">↗</span><span id="fileName">Прикрепите файлы (PDF, DWG, JPG) — до 20 МБ. Перетащите или нажмите.</span><input type="file" id="file" hidden multiple accept=".pdf,.dwg,.dxf,.jpg,.jpeg,.png"></label>
+            </div>
+            <div class="form-field full">
+              <label class="checkbox"><input type="checkbox" id="consent" required><span>Согласен на обработку персональных данных для подготовки расчета и обратной связи. Данные не передаются третьим лицам. <a href="#" style="text-decoration:underline">Политика конфиденциальности</a> *</span></label>
+              <span class="error-msg" id="consentError" style="margin-left:26px">Требуется согласие</span>
+            </div>
+          </div>
+          <div class="form-foot">
+            <button type="submit" class="btn btn-primary" style="height:52px; flex:1">Получить расчет и подбор системы</button>
+          </div>
+          <div class="success-msg" id="successMsg">Спасибо! Заявка отправлена. Мы изучим вводные и вернемся с подбором и предварительным расчетом в течение рабочего дня. Если нужно срочно — напишите на info@alumico.example</div>
+          <div style="margin-top:12px; font-size:11px; color:var(--ink-3); line-height:1.4; text-align:center">Нажимая кнопку, вы соглашаетесь с обработкой персональных данных. Мы не используем вымышленные отзывы и не публикуем данные проекта без вашего согласия.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo"><span class="nav-logo-mark">A</span><span>ALUMICO</span></div>
+        <p>Европейские алюминиевые архитектурные системы из Греции для фасадов, ограждений, ветрозащиты и парапетов. Поставки и техническая поддержка для проектов в России и СНГ.</p>
+      </div>
+      <div><h5>Продукция</h5><div class="footer-links"><a href="#products">Фасадные системы</a><a href="#products">Архитектурные ограждения</a><a href="#products">Стеклянные балюстрады</a><a href="#products">Ветрозащита</a><a href="#products">Парапеты</a><a href="#products">Custom решения</a></div></div>
+      <div><h5>Компания</h5><div class="footer-links"><a href="#about">О компании</a><a href="#solutions">Подбор решений</a><a href="#applications">Применение</a><a href="#faq">FAQ</a><a href="#request">Запросить расчет</a></div></div>
+      <div><h5>Контакты</h5><div class="footer-links"><a href="mailto:info@alumico.example">info@alumico.example</a><a href="tel:+70000000000">+7 000 000-00-00</a><span style="font-size:13px; color:var(--ink-2)">Производство: Греция</span><span style="font-size:13px; color:var(--ink-2)">Поставки: Россия и СНГ</span></div></div>
+    </div>
+    <div class="footer-bottom">
+      <div>© <span id="year"></span> ALUMICO. Алюминиевые архитектурные системы. Производство — Греция.</div>
+      <div style="display:flex; gap:16px"><a href="#">Конфиденциальность</a><a href="#">Обработка персональных данных</a><a href="#">Юридическая информация — placeholder</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Year
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Mobile menu
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+let menuOpen=false;
+hamburger.addEventListener('click', ()=>{
+  menuOpen=!menuOpen;
+  mobileMenu.classList.toggle('open', menuOpen);
+  hamburger.setAttribute('aria-expanded', menuOpen);
+});
+mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>{menuOpen=false; mobileMenu.classList.remove('open');}));
+
+// Reveal
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){ e.target.classList.add('in'); observer.unobserve(e.target); }
+  });
+},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in'));
+}
+
+// Selector logic
+const selections = {building:null, stage:null, product:null, req:[]};
+const summaryEl = document.getElementById('selectorSummary');
+const hintEl = document.getElementById('selectorHint');
+const listEl = document.getElementById('selectorList');
+const ctaEl = document.getElementById('selectorCta');
+
+document.querySelectorAll('.chips').forEach(group=>{
+  const g = group.dataset.group;
+  group.querySelectorAll('.chip').forEach(chip=>{
+    chip.addEventListener('click', ()=>{
+      if(g==='req'){
+        chip.classList.toggle('active');
+        const val = chip.dataset.value;
+        if(chip.classList.contains('active')){
+          if(!selections.req.includes(val)) selections.req.push(val);
+        } else {
+          selections.req = selections.req.filter(v=>v!==val);
+        }
+      } else {
+        group.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
+        chip.classList.add('active');
+        selections[g]=chip.dataset.value;
+      }
+      updateSummary();
+    });
+  });
+});
+
+function updateSummary(){
+  const parts=[];
+  if(selections.building) parts.push(selections.building);
+  if(selections.stage) parts.push('Стадия: '+selections.stage);
+  if(selections.product) parts.push(selections.product);
+  if(selections.req.length) parts.push('Требования: '+selections.req.join(', '));
+  
+  if(parts.length===0){
+    summaryEl.textContent='Выберите параметры слева — здесь появится краткое резюме для инженера.';
+    hintEl.textContent='На основе выбора мы подготовим 2–3 совместимые системы, узлы примыкания и предварительную ведомость.';
+    listEl.innerHTML='<li>Консультация технического специалиста</li><li>Подбор по чертежам и ТЗ</li><li>Предварительный расчет и сроки</li>';
+    return;
+  }
+  summaryEl.innerHTML = parts.map(p=>`<span style="display:inline-flex; padding:4px 10px; background:var(--bg-soft); border:1px solid var(--line-2); border-radius:999px; margin:2px 4px 2px 0; font-size:12px; font-weight:500">${p}</span>`).join('');
+  
+  // dynamic hint
+  let rec='';
+  if(selections.product==='Фасадные системы') rec='Рекомендуем: фасадные профили с регулируемым узлом, совместимые с керамогранитом / HPL / металлом. Проверим ветровые и допуски по облицовке.';
+  else if(selections.product==='Ветрозащита') rec='Рекомендуем: раздвижные ветрозащитные системы с верхним подвесом, закаленное стекло 10-12мм, скрытый направляющий профиль.';
+  else if(selections.product?.includes('Ограждения')||selections.product?.includes('балюстрады')) rec='Рекомендуем: стоечные или безрамные балюстрады с боковым или верхним креплением, ESG/VSG, высота по проекту.';
+  else if(selections.product==='Парапеты') rec='Рекомендуем: парапетные крышки с компенсатором температурных расширений, скрытый крепеж, толщина по ветровой зоне.';
+  else rec='Подберем 2–3 системы под ваш тип объекта и стадию, проверим узлы и совместимость с отделкой.';
+  
+  hintEl.textContent = rec;
+  listEl.innerHTML = `<li>Объект: ${selections.building||'не указан'} — учтем нагрузки и эстетику</li><li>Система: ${selections.product||'подберем'} под стадию ${selections.stage||'проекта'}</li><li>Подготовим ведомость, узлы и расчет в течение рабочего дня</li>`;
+  
+  // update form fields via URL hash
+  const params = new URLSearchParams();
+  if(selections.building) params.set('building', selections.building);
+  if(selections.product) params.set('product', selections.product);
+  ctaEl.href = '#request?'+params.toString();
+}
+
+// Showcase tabs
+const galleryData = {
+  all:{img:'image-search/modern-aluminum-facade-building-architec-3.jpg', fallback:'https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=1200', title:'Фасадная система — узел примыкания', sub:'Точный рез, скрытый крепеж, совместимость с облицовкой'},
+  facade:{img:'image-search/modern-aluminum-facade-building-architec-2.jpg', fallback:'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200', title:'Вентилируемый фасад — вертикальный профиль', sub:'Регулируемый кронштейн, компенсация неровностей основания'},
+  railing:{img:'image-search/aluminum-glass-railing-balcony-modern-ar-2.jpg', fallback:'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200', title:'Стеклянное ограждение — боковое крепление', sub:'Профиль с дренажем, ESG 12мм, уплотнители EPDM'},
+  wind:{img:'image-search/aluminum-glass-railing-balcony-modern-ar-5.jpg', fallback:'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1200', title:'Ветрозащита — раздвижная система', sub:'Верхний подвес, мягкий ход, фиксация в открытом положении'},
+  parapet:{img:'image-search/modern-aluminum-facade-building-architec-4.webp', fallback:'https://images.unsplash.com/photo-1497366811353-2533774fa78d?q=80&w=1200', title:'Парапетная крышка — узел завершения', sub:'Компенсатор расширения, скрытый крепеж, герметичный стык'}
+};
+function setGallery(key){
+  const d = galleryData[key]||galleryData.all;
+  const img = document.getElementById('galleryMainImg');
+  img.src=d.img;
+  img.onerror=()=>{img.src=d.fallback};
+  document.getElementById('galleryMainTitle').textContent=d.title;
+  document.getElementById('galleryMainSub').textContent=d.sub;
+  document.querySelectorAll('.showcase-tabs .tab').forEach(t=>t.classList.toggle('active', t.dataset.filter===key));
+  renderThumbs(key);
+}
+window.setGallery=setGallery;
+
+document.getElementById('showcaseTabs').querySelectorAll('.tab').forEach(tab=>{
+  tab.addEventListener('click', ()=> setGallery(tab.dataset.filter));
+});
+
+function renderThumbs(active){
+  const thumbs = document.getElementById('galleryThumbs');
+  const items = Object.keys(galleryData).filter(k=>k!=='all');
+  thumbs.innerHTML = items.map(k=>{
+    const d=galleryData[k];
+    return `<div class="gallery-card" data-cat="${k}" style="cursor:pointer; aspect-ratio:16/11; border:${active===k?'2px solid var(--ink)':'1px solid var(--line)'}; border-radius:14px; overflow:hidden" onclick="setGallery('${k}')"><img src="${d.img}" alt="${d.title}" onerror="this.src='${d.fallback}'" style="width:100%; height:100%; object-fit:cover"><div class="gallery-info" style="left:10px; right:10px; bottom:10px; padding:8px 10px"><div><strong style="font-size:12px">${d.title.split(' — ')[0]}</strong></div></div></div>`;
+  }).join('');
+}
+renderThumbs('all');
+
+// FAQ accordion
+document.querySelectorAll('.faq-item').forEach(item=>{
+  const btn=item.querySelector('.faq-q');
+  btn.addEventListener('click', ()=>{
+    const isOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+    if(!isOpen) item.classList.add('open');
+  });
+});
+
+// Form
+const form = document.getElementById('leadForm');
+const fileInput = document.getElementById('file');
+const fileName = document.getElementById('fileName');
+fileInput.addEventListener('change', ()=>{
+  if(fileInput.files.length){
+    fileName.textContent = Array.from(fileInput.files).map(f=>f.name).join(', ') + ` — ${fileInput.files.length} файл(ов)`;
+  } else {
+    fileName.textContent='Прикрепите файлы (PDF, DWG, JPG) — до 20 МБ. Перетащите или нажмите.';
+  }
+});
+
+form.addEventListener('submit', (e)=>{
+  e.preventDefault();
+  let valid=true;
+  form.querySelectorAll('.form-field').forEach(field=>{
+    const input=field.querySelector('input, select, textarea');
+    if(!input) return;
+    if(input.hasAttribute('required') && !input.value.trim()){
+      field.classList.add('error'); valid=false;
+    } else {
+      field.classList.remove('error');
+    }
+    if(input.type==='checkbox' && input.required && !input.checked){
+      field.classList.add('error'); valid=false;
+      document.getElementById('consentError').style.display='block';
+    }
+  });
+  // email/phone simple check
+  const contact = document.getElementById('contact');
+  if(contact.value && contact.value.length<5){ contact.parentElement.classList.add('error'); valid=false; }
+  
+  if(!valid) return;
+  
+  // simulate success
+  const btn = form.querySelector('button[type="submit"]');
+  const orig = btn.textContent;
+  btn.textContent='Отправка...'; btn.disabled=true;
+  setTimeout(()=>{
+    btn.textContent=orig; btn.disabled=false;
+    document.getElementById('successMsg').classList.add('show');
+    form.reset();
+    fileName.textContent='Прикрепите файлы (PDF, DWG, JPG) — до 20 МБ. Перетащите или нажмите.';
+    // optionally scroll
+    document.getElementById('successMsg').scrollIntoView({behavior:'smooth', block:'center'});
+  }, 900);
+});
+
+// Smooth scroll offset for sticky nav
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click', (e)=>{
+    const href=a.getAttribute('href').split('?')[0];
+    if(href.length>1){
+      const target=document.querySelector(href);
+      if(target){
+        e.preventDefault();
+        const top=target.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({top, behavior:'smooth'});
+      }
+    }
+  });
+});
+
+// Prefill from selector URL
+const urlParams=new URLSearchParams(window.location.search);
+if(urlParams.get('product')){
+  const cat=document.getElementById('category');
+  if(cat){
+    const val=urlParams.get('product');
+    for(let opt of cat.options){ if(opt.text.includes(val) || val.includes(opt.text)){ cat.value=opt.value; break; } }
+  }
+}
+if(urlParams.get('building')){
+  const proj=document.getElementById('projectType');
+  if(proj){
+    const val=urlParams.get('building');
+    for(let opt of proj.options){ if(opt.text===val){ proj.value=val; break; } }
+  }
+}
+</script>
+</body>
+</html>

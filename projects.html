@@ -184,6 +184,67 @@ a{color:inherit; text-decoration:none}
 .footer-bottom{margin-top:40px; padding-top:24px; border-top:1px solid var(--line-2); display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; font-size:12px; color:var(--ink-3)}
 @media(max-width:900px){ .footer-grid{grid-template-columns:1fr 1fr} }
 @media(max-width:560px){ .footer-grid{grid-template-columns:1fr} }
+
+/* MOBILE OPTIMIZATION */
+@media(max-width:768px){
+  body{font-size:15px}
+  .hero-proj h1{font-size:32px}
+  .hero-proj-desc{font-size:15px}
+  .system{padding:56px 0}
+  .system-head{grid-template-columns:1fr; gap:20px}
+  .sub-grid{grid-template-columns:1fr}
+  .chain-grid{grid-template-columns:1fr}
+  .specs{grid-template-columns:1fr; padding:20px}
+  .projects-section{padding:48px 0; margin:24px 0; border-radius:20px}
+  .p-card{min-width:84vw; max-width:84vw}
+  .footer{padding:40px 0 100px}
+  .nav{height:64px}
+  .filter-bar{top:64px}
+  .mobile-menu{inset:64px 0 0 0}
+  .carousel-slide{aspect-ratio:16/11}
+  .form-field input, .form-field select, .form-field textarea{font-size:16px}
+}
+@media(max-width:480px){ .container{padding:0 16px} .final-cta{padding:20px; border-radius:20px} }
+
+/* FLOATING CTA */
+.floating-cta{
+  position:fixed; right:20px; bottom:20px; z-index:60;
+  display:flex; align-items:center; gap:10px;
+  height:56px; padding:0 22px; border-radius:999px;
+  background:var(--ink); color:#fff; border:1px solid rgba(255,255,255,0.12);
+  box-shadow:0 12px 32px rgba(14,18,22,0.22), 0 0 0 1px rgba(255,255,255,0.06) inset;
+  font-weight:600; font-size:14px; cursor:pointer; transition:all .25s cubic-bezier(.16,1,.3,1);
+}
+.floating-cta:hover{transform:translateY(-2px)}
+.floating-cta-dot{width:8px; height:8px; border-radius:50%; background:#6EFF8A; box-shadow:0 0 0 4px rgba(110,255,138,0.18); animation:pulseDot 2s infinite; flex-shrink:0}
+@keyframes pulseDot{0%{box-shadow:0 0 0 0 rgba(110,255,138,0.4)} 70%{box-shadow:0 0 0 8px rgba(110,255,138,0)} 100%{box-shadow:0 0 0 0 rgba(110,255,138,0)}}
+@media(max-width:768px){ .floating-cta{left:16px; right:16px; bottom:calc(16px + env(safe-area-inset-bottom)); justify-content:center; height:58px; font-size:15px} }
+
+/* MODAL */
+.modal-overlay{position:fixed; inset:0; background:rgba(14,18,22,0.52); backdrop-filter:blur(16px) saturate(140%); z-index:100; display:none; place-items:center; padding:16px; opacity:0; transition:opacity .3s}
+.modal-overlay.open{display:grid; opacity:1}
+.modal{width:100%; max-width:520px; max-height:92vh; overflow:auto; background:#fff; border-radius:24px; border:1px solid var(--line); box-shadow:0 24px 80px rgba(14,18,22,0.24); transform:translateY(16px) scale(0.98); transition:transform .4s cubic-bezier(.16,1,.3,1)}
+.modal-overlay.open .modal{transform:none}
+.modal-head{position:sticky; top:0; background:rgba(255,255,255,0.92); backdrop-filter:blur(12px); padding:20px 24px 16px; border-bottom:1px solid var(--line-2); display:flex; justify-content:space-between; gap:16px; z-index:1}
+.modal-head h3{font-size:20px; line-height:1.1}
+.modal-head p{font-size:12px; color:var(--ink-2); margin-top:6px; line-height:1.4}
+.modal-close{width:36px; height:36px; border-radius:999px; border:1px solid var(--line); background:#fff; display:grid; place-items:center; cursor:pointer; flex-shrink:0}
+.modal-body{padding:20px 24px 24px}
+.form-grid{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+.form-field{display:flex; flex-direction:column; gap:6px}
+.form-field.full{grid-column:1/-1}
+.form-field label{font-size:10px; letter-spacing:0.08em; text-transform:uppercase; font-weight:600; color:var(--ink-3)}
+.form-field input, .form-field select, .form-field textarea{height:46px; border-radius:12px; border:1px solid var(--line); padding:0 14px; font-size:16px; outline:none; width:100%}
+.form-field textarea{height:auto; min-height:88px; padding:12px 14px}
+.form-field.error input, .form-field.error select{border-color:#D14343}
+.error-msg{font-size:11px; color:#D14343; display:none}
+.form-field.error .error-msg{display:block}
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:10px; height:52px; padding:0 24px; border-radius:999px; border:1px solid transparent; font-weight:600; font-size:15px; cursor:pointer; transition:.25s}
+.btn-primary{background:var(--ink); color:#fff}
+.btn-secondary{background:#fff; border-color:var(--line); color:var(--ink)}
+.modal-success{display:none; background:#F0F6F0; border:1px solid #C5DFC5; border-radius:12px; padding:14px; font-size:13px; color:#2A5A2A; margin-top:14px}
+.modal-success.show{display:block}
+@media(max-width:600px){ .form-grid{grid-template-columns:1fr} .modal{border-radius:20px} }
 </style>
 </head>
 <body>
@@ -573,6 +634,53 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
     const href=a.getAttribute('href'); if(href.length>1){ const t=document.querySelector(href); if(t){ e.preventDefault(); const top=t.getBoundingClientRect().top+window.scrollY-90; window.scrollTo({top, behavior:'smooth'}) } }
   });
 });
+
+// Floating CTA Modal
+const floatingBtn=document.getElementById('floatingCta');
+const modalOverlay=document.getElementById('calcModal');
+const modalCloseBtns=document.querySelectorAll('[data-close-modal]');
+function openModal(){ modalOverlay.classList.add('open'); document.body.style.overflow='hidden'; setTimeout(()=>{document.getElementById('m_name')?.focus()},100); }
+function closeModal(){ modalOverlay.classList.remove('open'); document.body.style.overflow=''; }
+floatingBtn?.addEventListener('click', openModal);
+modalCloseBtns.forEach(b=>b.addEventListener('click', closeModal));
+modalOverlay?.addEventListener('click', (e)=>{ if(e.target===modalOverlay) closeModal(); });
+document.addEventListener('keydown', (e)=>{ if(e.key==='Escape' && modalOverlay.classList.contains('open')) closeModal(); });
+const mForm=document.getElementById('modalForm');
+const mSuccess=document.getElementById('modalSuccess');
+mForm?.addEventListener('submit', (e)=>{
+  e.preventDefault(); let valid=true;
+  mForm.querySelectorAll('[required]').forEach(inp=>{
+    const field=inp.closest('.form-field');
+    if(!inp.value.trim() || (inp.type==='checkbox' && !inp.checked)){ field?.classList.add('error'); valid=false; } else { field?.classList.remove('error'); }
+  });
+  if(!valid) return;
+  const btn=mForm.querySelector('button[type="submit"]'); const orig=btn.textContent; btn.textContent='Отправка...'; btn.disabled=true;
+  setTimeout(()=>{ btn.textContent=orig; btn.disabled=false; mSuccess.classList.add('show'); mForm.reset(); setTimeout(()=>{closeModal(); mSuccess.classList.remove('show')},3000); },800);
+});
 </script>
+
+<button class="floating-cta" id="floatingCta" aria-label="Заказать расчет"><span class="floating-cta-dot"></span>Заказать расчет <span style="opacity:0.6; font-weight:400">· 2 мин</span></button>
+
+<div class="modal-overlay" id="calcModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal">
+    <div class="modal-head"><div><h3 id="modalTitle">Заказать расчет</h3><p>Подберем систему Fusion / F50 / Open Air / Crystal под ваш объект. Производство — Греция, поставки — Россия и СНГ.</p></div><button class="modal-close" data-close-modal aria-label="Закрыть">✕</button></div>
+    <div class="modal-body">
+      <form id="modalForm" novalidate>
+        <div class="form-grid">
+          <div class="form-field"><label>Имя *</label><input id="m_name" name="name" required placeholder="Иван Петров"></div>
+          <div class="form-field"><label>Компания</label><input name="company" placeholder="ООО Девелопер"></div>
+          <div class="form-field"><label>Телефон или email *</label><input name="contact" required placeholder="+7 ... / email"></div>
+          <div class="form-field"><label>Система</label><select name="system"><option value="">Выберите</option><option>Fusion Line</option><option>F50 Line</option><option>Open Air</option><option>Crystal Line</option></select></div>
+          <div class="form-field"><label>Категория *</label><select name="category" required><option value="">Выберите</option><option>Фасадные системы</option><option>Ограждения</option><option>Стеклянные балюстрады</option><option>Ветрозащита</option><option>Парапеты</option></select><span class="error-msg">Выберите</span></div>
+          <div class="form-field"><label>Объем</label><input name="scope" placeholder="240 м.п., 1200 м²"></div>
+          <div class="form-field full"><label>Задача</label><textarea name="details" placeholder="Опишите объект, стадию, требования..." rows="3"></textarea></div>
+          <div class="form-field full"><label class="checkbox" style="font-size:12px; display:flex; gap:8px"><input type="checkbox" required><span>Согласен на обработку ПД для расчета *</span></label><span class="error-msg">Требуется согласие</span></div>
+        </div>
+        <div style="margin-top:16px; display:flex; gap:10px"><button type="submit" class="btn btn-primary" style="flex:1">Получить расчет</button><button type="button" class="btn btn-secondary" data-close-modal>Отмена</button></div>
+        <div class="modal-success" id="modalSuccess">Спасибо! Заявка отправлена. Свяжемся в течение рабочего дня.</div>
+      </form>
+    </div>
+  </div>
+</div>
 </body>
 </html>

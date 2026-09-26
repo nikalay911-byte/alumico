@@ -7,31 +7,33 @@
 <meta name="description" content="Европейские алюминиевые системы для фасадов, ограждений, ветрозащиты и парапетов. Производство в Греции. Техническая поддержка, подбор систем и расчет для девелоперов, архитекторов и фасадных подрядчиков в России и СНГ.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Geist:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#FBFBF9;
-  --bg-soft:#F2F1ED;
-  --bg-card:#FFFFFF;
-  --ink:#0E1216;
-  --ink-2:#5C656E;
-  --ink-3:#8A949E;
-  --line:#E9E5DD;
-  --line-2:#EDE9E2;
-  --accent:#0E1216;
-  --accent-hover:#1C252D;
-  --accent-soft:#E8ECF0;
-  --beige:#F6F3EE;
+  --bg:#FBF8F3;
+  --bg-soft:#F2EDE6;
+  --bg-card:#FFFEFB;
+  --ink:#0A0E12;
+  --ink-2:#6B6B63;
+  --ink-3:#9A9A92;
+  --line:#E8DDD0;
+  --line-2:#EDE5D8;
+  --accent:#0A0E12;
+  --accent-hover:#1A1F26;
+  --beige:#F6F1E8;
+  --champagne:#C2A47A;
+  --champagne-soft:#E8D9C0;
   --radius-xl:28px;
   --radius-l:20px;
   --radius-m:14px;
-  --shadow-soft:0 20px 60px rgba(14,18,22,0.06);
-  --shadow-card:0 8px 30px rgba(14,18,22,0.06);
+  --shadow-soft:0 20px 60px rgba(10,14,18,0.06);
+  --shadow-card:0 8px 30px rgba(10,14,18,0.06);
+  --shadow-lux:0 24px 80px rgba(10,14,18,0.10), 0 1px 0 rgba(255,255,255,0.8) inset;
   --max:1320px;
   --pad:32px;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth; background:var(--bg)}
 body{
   margin:0;
   background:var(--bg);
@@ -445,9 +447,101 @@ h1,h2,h3{margin:0; line-height:1.05; letter-spacing:-0.03em}
 .modal-success{display:none; background:#F0F6F0; border:1px solid #C5DFC5; border-radius:12px; padding:14px; font-size:13px; color:#2A5A2A; margin-top:14px}
 .modal-success.show{display:block}
 @media(max-width:600px){ .modal-body .form-grid{grid-template-columns:1fr} .modal{max-width:100%; border-radius:20px; max-height:94vh} .modal-head{padding:18px 18px 14px} .modal-body{padding:18px} }
+
+/* ===== FULL LUXURY UPGRADE — Vitrocsa / Reynaers level ===== */
+body{background:var(--bg); position:relative}
+body::before{content:""; position:fixed; inset:0; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); opacity:0.025; pointer-events:none; z-index:9998; mix-blend-mode:multiply}
+
+/* Scroll progress */
+.scroll-progress{position:fixed; top:0; left:0; height:2px; background:linear-gradient(90deg, var(--champagne), var(--ink)); width:0%; z-index:100; transition:width .1s linear}
+
+/* Custom cursor - desktop only */
+.cursor{position:fixed; top:0; left:0; width:28px; height:28px; border:1px solid var(--ink); border-radius:50%; pointer-events:none; z-index:9999; mix-blend-mode:normal; background:rgba(10,14,18,0.04); backdrop-filter:blur(2px); transform:translate(-50%,-50%); transition:width .25s, height .25s, background .25s, border-color .25s; display:none}
+.cursor-dot{position:absolute; top:50%; left:50%; width:4px; height:4px; background:var(--ink); border-radius:50%; transform:translate(-50%,-50%)}
+.cursor-label{position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); font-size:9px; letter-spacing:0.12em; text-transform:uppercase; font-weight:700; opacity:0; transition:opacity .2s; white-space:nowrap; font-family:"Geist Mono", monospace}
+.cursor.hover{width:72px; height:72px; background:var(--ink); border-color:var(--ink)}
+.cursor.hover .cursor-dot{opacity:0}
+.cursor.hover .cursor-label{opacity:1; color:#fff}
+@media(hover:hover) and (pointer:fine){ .cursor{display:block} }
+
+/* Typography luxury */
+h1,h2{font-family:"Manrope", sans-serif; font-weight:700; letter-spacing:-0.05em}
+h1 em, h2 em{font-family:"Instrument Serif", serif; font-style:italic; font-weight:400; letter-spacing:-0.02em; color:var(--ink-2)}
+.eyebrow{font-family:"Geist Mono", monospace; font-size:10px; letter-spacing:0.16em; border:0.5px solid var(--line); background:rgba(255,255,255,0.7); backdrop-filter:blur(8px)}
+.section-head h2{position:relative}
+.section-head h2::before{content:attr(data-num); position:absolute; left:-48px; top:0; font-family:"Geist Mono", monospace; font-size:11px; color:var(--champagne); letter-spacing:0.1em; transform:rotate(-90deg); transform-origin:left top; opacity:0.8}
+@media(max-width:1200px){ .section-head h2::before{display:none} }
+
+/* Hairline borders */
+.product-card, .trust-card, .benefit, .app-card, .form, .pricing{border:0.5px solid var(--line); box-shadow:var(--shadow-lux)}
+.product-card{position:relative; overflow:hidden}
+.product-card::after{content:""; position:absolute; inset:0; background:linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.4) 50%, transparent 60%); transform:translateX(-120%); transition:transform .8s cubic-bezier(.16,1,.3,1); pointer-events:none}
+.product-card:hover::after{transform:translateX(120%)}
+.product-img{position:relative}
+.product-img::after{content:""; position:absolute; inset:0; background:linear-gradient(0deg, rgba(10,14,18,0.08), transparent 40%); pointer-events:none}
+
+/* Hero luxury */
+.hero{padding:0; overflow:hidden}
+.hero-grid{grid-template-columns:1.2fr 0.8fr; gap:0; min-height:88vh; align-items:stretch}
+.hero-left{padding:72px 48px 56px 0; position:relative; display:flex; flex-direction:column; justify-content:center}
+.hero-left::before{content:""; position:absolute; left:-100vw; right:0; top:0; bottom:0; background:var(--bg); z-index:-1}
+.hero h1{font-size:clamp(38px,5.4vw,68px); line-height:0.88; letter-spacing:-0.06em}
+.hero h1 span.serif{font-family:"Instrument Serif", serif; font-style:italic; font-weight:400; color:var(--champagne); display:inline-block; transform:translateY(2px)}
+.hero-desc{font-size:17px; line-height:1.6; color:var(--ink-2); max-width:520px}
+.hero-visual{border-radius:0 0 0 var(--radius-xl); aspect-ratio:auto; height:100%; min-height:640px; margin-right:calc(-1 * var(--pad)); position:relative}
+.hero-visual::before{content:""; position:absolute; inset:0; background:linear-gradient(90deg, var(--bg) 0%, transparent 18%); z-index:1; pointer-events:none}
+.hero-badge{top:28px; left:28px; z-index:2; border:0.5px solid rgba(255,255,255,0.7); box-shadow:0 8px 24px rgba(0,0,0,0.08)}
+.hero-visual-overlay{left:24px; right:24px; bottom:24px; z-index:2}
+.glass-card{border:0.5px solid rgba(255,255,255,0.7); box-shadow:0 12px 40px rgba(0,0,0,0.12), 0 1px 0 rgba(255,255,255,0.8) inset}
+
+/* Trust luxury */
+.trust-card{position:relative; padding:28px 24px}
+.trust-card::before{content:""; position:absolute; top:0; left:24px; right:24px; height:1px; background:linear-gradient(90deg, var(--champagne), transparent); opacity:0.6}
+.trust-card-icon{background:var(--beige); border:0.5px solid var(--line); width:40px; height:40px}
+
+/* Selector luxury */
+.selector{border-radius:var(--radius-xl); position:relative; overflow:hidden; border:0.5px solid rgba(255,255,255,0.1)}
+.selector::after{content:""; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg, var(--champagne), transparent); opacity:0.6}
+.chip{border:0.5px solid rgba(255,255,255,0.18); backdrop-filter:blur(8px)}
+.chip.active{box-shadow:0 4px 16px rgba(0,0,0,0.12)}
+
+/* Benefits editorial */
+.benefit{padding:36px 32px; position:relative}
+.benefit-num{font-family:"Geist Mono", monospace; font-size:10px; color:var(--champagne)}
+.benefit h4{font-size:19px; line-height:1.15}
+
+/* Showcase luxury */
+.showcase-tabs{background:rgba(242,237,230,0.8); border:0.5px solid var(--line); backdrop-filter:blur(12px); padding:5px}
+.tab{font-family:"Geist Mono", monospace; font-size:11px; letter-spacing:0.06em; text-transform:uppercase}
+.gallery-main{border:0.5px solid var(--line); box-shadow:var(--shadow-lux)}
+.gallery-main::after{content:""; position:absolute; left:16px; top:16px; width:24px; height:24px; border-left:0.5px solid rgba(255,255,255,0.8); border-top:0.5px solid rgba(255,255,255,0.8); z-index:1; pointer-events:none}
+.gallery-info{border:0.5px solid rgba(255,255,255,0.7); box-shadow:0 8px 24px rgba(0,0,0,0.08)}
+
+/* Magnetic buttons */
+.btn{position:relative; overflow:hidden; border:0.5px solid transparent; will-change:transform}
+.btn-primary{border-color:rgba(255,255,255,0.1); box-shadow:0 12px 32px rgba(10,14,18,0.18), 0 1px 0 rgba(255,255,255,0.1) inset}
+.btn-primary::before{content:""; position:absolute; inset:0; background:linear-gradient(105deg, transparent, rgba(255,255,255,0.12), transparent); transform:translateX(-100%); transition:transform .6s}
+.btn-primary:hover::before{transform:translateX(100%)}
+
+/* Blueprint background */
+.blueprint{position:absolute; inset:0; opacity:0.04; pointer-events:none; background-image:linear-gradient(var(--line) 0.5px, transparent 0.5px), linear-gradient(90deg, var(--line) 0.5px, transparent 0.5px); background-size:32px 32px}
+
+/* Nav luxury */
+.nav-wrap{border-bottom:0.5px solid var(--line); background:rgba(251,248,243,0.82)}
+.nav-logo-mark{border:0.5px solid rgba(255,255,255,0.2); box-shadow:0 4px 12px rgba(10,14,18,0.12)}
+.nav-links a{font-family:"Geist Mono", monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; font-weight:500}
+
+/* Footer luxury */
+.footer{border-top:0.5px solid var(--line); background:linear-gradient(0deg, var(--beige), var(--bg))}
+.footer h5{font-family:"Geist Mono", monospace; font-size:10px; color:var(--champagne)}
+
+/* Reveal luxury */
+.reveal{transition:opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1)}
 </style>
 </head>
 <body>
+<div class="scroll-progress" id="scrollProgress"></div>
+<div class="cursor" id="cursor"><div class="cursor-dot"></div><span class="cursor-label">Смотреть</span></div>
 
 <div class="nav-wrap">
   <div class="container nav">
@@ -490,7 +584,7 @@ h1,h2,h3{margin:0; line-height:1.05; letter-spacing:-0.03em}
     <div class="hero-grid">
       <div class="hero-left reveal">
         <span class="eyebrow"><i></i> Производство в Греции · Европейское качество</span>
-        <h1>Алюминиевые архитектурные системы для фасадов, ограждений и современных строительных проектов</h1>
+        <h1>Алюминиевые <span class="serif">архитектурные системы</span> для фасадов, ограждений и современных строительных проектов</h1>
         <p class="hero-desc">Поставляем фасадные профильные системы, архитектурные и стеклянные ограждения, ветрозащиту и парапеты. Помогаем девелоперам, архитекторам и фасадным подрядчикам подобрать систему, подготовить спецификацию и рассчитать проект без рисков и задержек.</p>
         <div class="hero-ctas">
           <a href="#request" class="btn btn-primary">Получить расчет проекта</a>
@@ -922,6 +1016,60 @@ h1,h2,h3{margin:0; line-height:1.05; letter-spacing:-0.03em}
 <script>
 // Year
 document.getElementById('year').textContent = new Date().getFullYear();
+
+// Luxury: scroll progress
+const scrollProgress=document.getElementById('scrollProgress');
+window.addEventListener('scroll', ()=>{
+  const h=document.documentElement;
+  const scrolled=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100;
+  if(scrollProgress) scrollProgress.style.width=scrolled+'%';
+}, {passive:true});
+
+// Luxury: custom cursor
+const cursor=document.getElementById('cursor');
+if(cursor && window.matchMedia('(hover:hover) and (pointer:fine)').matches){
+  let mouseX=0, mouseY=0, cursorX=0, cursorY=0;
+  document.addEventListener('mousemove', e=>{ mouseX=e.clientX; mouseY=e.clientY; });
+  (function animateCursor(){
+    cursorX+=(mouseX-cursorX)*0.15;
+    cursorY+=(mouseY-cursorY)*0.15;
+    cursor.style.left=cursorX+'px';
+    cursor.style.top=cursorY+'px';
+    requestAnimationFrame(animateCursor);
+  })();
+  document.querySelectorAll('a, button, .product-card, .gallery-main, .gallery-card, .app-card').forEach(el=>{
+    el.addEventListener('mouseenter', ()=>cursor.classList.add('hover'));
+    el.addEventListener('mouseleave', ()=>cursor.classList.remove('hover'));
+  });
+}
+
+// Luxury: magnetic buttons
+document.querySelectorAll('.btn-primary').forEach(btn=>{
+  btn.addEventListener('mousemove', (e)=>{
+    const rect=btn.getBoundingClientRect();
+    const x=e.clientX-rect.left-rect.width/2;
+    const y=e.clientY-rect.top-rect.height/2;
+    btn.style.transform=`translate(${x*0.15}px, ${y*0.35}px)`;
+  });
+  btn.addEventListener('mouseleave', ()=>{ btn.style.transform=''; });
+});
+
+// Luxury: parallax for hero visual
+const heroVisual=document.querySelector('.hero-visual img');
+if(heroVisual){
+  window.addEventListener('scroll', ()=>{
+    const scrolled=window.scrollY;
+    if(scrolled<window.innerHeight){
+      heroVisual.style.transform=`scale(1.02) translateY(${scrolled*0.12}px)`;
+    }
+  }, {passive:true});
+}
+
+// Luxury: section numbers
+document.querySelectorAll('.section-head h2').forEach((h,i)=>{
+  const num=String(i+1).padStart(2,'0');
+  h.setAttribute('data-num', num);
+});
 
 // Mobile menu
 const hamburger = document.getElementById('hamburger');

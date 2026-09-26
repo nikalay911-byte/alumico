@@ -7,19 +7,21 @@
 <meta name="description" content="Каталог систем ALUMINCO: Fusion Line (ORBIT, ELXIS, SYNTESIS), F50 Line, Open Air Line, Crystal Line. Выполненные проекты в Москве и России. Производство в Греции.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Geist:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#FBFBF9;
-  --bg-soft:#F2F1ED;
-  --bg-card:#FFFFFF;
-  --ink:#0E1216;
-  --ink-2:#5C656E;
-  --ink-3:#8A949E;
-  --line:#E9E5DD;
-  --line-2:#EDE9E2;
-  --accent:#0E1216;
-  --beige:#F6F3EE;
+  --bg:#FBF8F3;
+  --bg-soft:#F2EDE6;
+  --bg-card:#FFFEFB;
+  --ink:#0A0E12;
+  --ink-2:#6B6B63;
+  --ink-3:#9A9A92;
+  --line:#E8DDD0;
+  --line-2:#EDE5D8;
+  --accent:#0A0E12;
+  --beige:#F6F1E8;
+  --champagne:#C2A47A;
+  --champagne-soft:#E8D9C0;
   --radius-xl:28px;
   --radius-l:20px;
   --radius-m:14px;
@@ -245,9 +247,28 @@ a{color:inherit; text-decoration:none}
 .modal-success{display:none; background:#F0F6F0; border:1px solid #C5DFC5; border-radius:12px; padding:14px; font-size:13px; color:#2A5A2A; margin-top:14px}
 .modal-success.show{display:block}
 @media(max-width:600px){ .form-grid{grid-template-columns:1fr} .modal{border-radius:20px} }
+
+/* FULL LUXURY */
+body{background:var(--bg)}
+body::before{content:""; position:fixed; inset:0; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); opacity:0.025; pointer-events:none; z-index:9998; mix-blend-mode:multiply}
+.scroll-progress{position:fixed; top:0; left:0; height:2px; background:linear-gradient(90deg, var(--champagne), var(--ink)); width:0%; z-index:100; transition:width .1s linear}
+.cursor{position:fixed; top:0; left:0; width:28px; height:28px; border:1px solid var(--ink); border-radius:50%; pointer-events:none; z-index:9999; background:rgba(10,14,18,0.04); backdrop-filter:blur(2px); transform:translate(-50%,-50%); transition:width .25s, height .25s, background .25s; display:none}
+.cursor-dot{position:absolute; top:50%; left:50%; width:4px; height:4px; background:var(--ink); border-radius:50%; transform:translate(-50%,-50%)}
+.cursor-label{position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); font-size:9px; letter-spacing:0.12em; text-transform:uppercase; font-weight:700; opacity:0; transition:opacity .2s; white-space:nowrap; font-family:"Geist Mono", monospace}
+.cursor.hover{width:72px; height:72px; background:var(--ink); border-color:var(--ink)}
+.cursor.hover .cursor-dot{opacity:0}
+.cursor.hover .cursor-label{opacity:1; color:#fff}
+@media(hover:hover) and (pointer:fine){ .cursor{display:block} }
+h1,h2{letter-spacing:-0.05em}
+h1 .serif, h2 .serif{font-family:"Instrument Serif", serif; font-style:italic; font-weight:400; color:var(--champagne)}
+.eyebrow{font-family:"Geist Mono", monospace; font-size:10px; letter-spacing:0.16em; border:0.5px solid var(--line)}
+.nav-links a{font-family:"Geist Mono", monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase}
+.product-card, .sub-card, .p-card, .carousel{border:0.5px solid var(--line); box-shadow:0 24px 80px rgba(10,14,18,0.08), 0 1px 0 rgba(255,255,255,0.8) inset}
 </style>
 </head>
 <body>
+<div class="scroll-progress" id="scrollProgress"></div>
+<div class="cursor" id="cursor"><div class="cursor-dot"></div><span class="cursor-label">Смотреть</span></div>
 
 <div class="nav-wrap">
   <div class="container nav">
@@ -545,6 +566,25 @@ a{color:inherit; text-decoration:none}
 <script>
 // Year
 document.getElementById('year').textContent=new Date().getFullYear();
+
+// Luxury: scroll progress + cursor
+const scrollProgress=document.getElementById('scrollProgress');
+window.addEventListener('scroll', ()=>{
+  const h=document.documentElement;
+  const scrolled=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100;
+  if(scrollProgress) scrollProgress.style.width=scrolled+'%';
+}, {passive:true});
+const cursor=document.getElementById('cursor');
+if(cursor && window.matchMedia('(hover:hover) and (pointer:fine)').matches){
+  let mouseX=0, mouseY=0, cursorX=0, cursorY=0;
+  document.addEventListener('mousemove', e=>{ mouseX=e.clientX; mouseY=e.clientY; });
+  (function animateCursor(){ cursorX+=(mouseX-cursorX)*0.15; cursorY+=(mouseY-cursorY)*0.15; cursor.style.left=cursorX+'px'; cursor.style.top=cursorY+'px'; requestAnimationFrame(animateCursor); })();
+  document.querySelectorAll('a, button, .p-card, .carousel-slide, .sub-card').forEach(el=>{
+    el.addEventListener('mouseenter', ()=>cursor.classList.add('hover'));
+    el.addEventListener('mouseleave', ()=>cursor.classList.remove('hover'));
+  });
+}
+
 // Mobile
 const hamburger=document.getElementById('hamburger'), mobileMenu=document.getElementById('mobileMenu'); let menuOpen=false;
 hamburger.addEventListener('click',()=>{menuOpen=!menuOpen; mobileMenu.classList.toggle('open',menuOpen)});
